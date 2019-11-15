@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'InterfaceOrientation_Example' do
+  pod 'InterfaceOrientation', :path => '../'
+
+  target 'InterfaceOrientation_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,16 @@
+PODS:
+  - InterfaceOrientation (1.0)
+
+DEPENDENCIES:
+  - InterfaceOrientation (from `../`)
+
+EXTERNAL SOURCES:
+  InterfaceOrientation:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  InterfaceOrientation: 72b215ea1626cc3f989c9dac587d0380cac4e413
+
+PODFILE CHECKSUM: 2fdd4f547c80e11170a61424be15c295ce823f30
+
+COCOAPODS: 1.8.4
