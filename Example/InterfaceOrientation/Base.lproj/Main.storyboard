@@ -1,53 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ebo-4k-giY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Video-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InterfaceOrientation_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Video" id="BYZ-38-t0r" customClass="ViewController" customModule="InterfaceOrientation_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KYG-nP-4H6">
-                                <rect key="frame" x="77.5" y="432.5" width="259" height="32"/>
-                                <segments>
-                                    <segment title="竖屏-上"/>
-                                    <segment title="竖屏-下"/>
-                                    <segment title="横屏-左"/>
-                                    <segment title="横屏-右"/>
-                                </segments>
-                                <connections>
-                                    <action selector="didSelectedOrientation:" destination="BYZ-38-t0r" eventType="valueChanged" id="BVA-o0-8E0"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="默认不支持屏幕旋转，点击以下开启旋转" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86E-0C-4Dy">
-                                <rect key="frame" x="51" y="377" width="312" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6c-ZX-gOB" userLabel="Video Container  View">
+                                <rect key="frame" x="0.0" y="88" width="414" height="233"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQg-Uh-eCU" userLabel="Video View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="fis-09-Mpn">
+                                                <rect key="frame" x="51" y="73.5" width="312" height="85.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="默认不支持屏幕旋转，点击以下开启旋转" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86E-0C-4Dy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="312" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KYG-nP-4H6">
+                                                        <rect key="frame" x="26.5" y="54.5" width="259" height="32"/>
+                                                        <segments>
+                                                            <segment title="竖屏-上"/>
+                                                            <segment title="竖屏-下"/>
+                                                            <segment title="横屏-左"/>
+                                                            <segment title="横屏-右"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="didSelectedOrientation:" destination="BYZ-38-t0r" eventType="valueChanged" id="BVA-o0-8E0"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="fis-09-Mpn" firstAttribute="centerY" secondItem="TQg-Uh-eCU" secondAttribute="centerY" id="i05-NO-itv"/>
+                                            <constraint firstItem="fis-09-Mpn" firstAttribute="centerX" secondItem="TQg-Uh-eCU" secondAttribute="centerX" id="zfI-If-ecn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="w6c-ZX-gOB" secondAttribute="height" multiplier="16:9" id="7Z9-im-wyj"/>
+                                    <constraint firstAttribute="trailing" secondItem="TQg-Uh-eCU" secondAttribute="trailing" id="PUh-RF-QZa"/>
+                                    <constraint firstAttribute="bottom" secondItem="TQg-Uh-eCU" secondAttribute="bottom" id="Pr1-9O-LZX"/>
+                                    <constraint firstItem="TQg-Uh-eCU" firstAttribute="leading" secondItem="w6c-ZX-gOB" secondAttribute="leading" id="afg-yv-ubs"/>
+                                    <constraint firstItem="TQg-Uh-eCU" firstAttribute="top" secondItem="w6c-ZX-gOB" secondAttribute="top" id="zW4-hU-jia"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="KYG-nP-4H6" firstAttribute="top" secondItem="86E-0C-4Dy" secondAttribute="bottom" constant="34.5" id="7JC-GO-DXT"/>
-                            <constraint firstItem="86E-0C-4Dy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fGu-P0-De5"/>
-                            <constraint firstItem="KYG-nP-4H6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sFR-HT-7Rp"/>
-                            <constraint firstItem="KYG-nP-4H6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yrQ-EP-oZI"/>
+                            <constraint firstItem="w6c-ZX-gOB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2S6-RN-NLd"/>
+                            <constraint firstItem="w6c-ZX-gOB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9bI-wr-UgG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w6c-ZX-gOB" secondAttribute="trailing" id="Duj-fO-sV0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Video" id="DcN-TL-Ihc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="mLh-Fx-NP3"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="cDJ-o1-ohb"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="videoContainerView" destination="w6c-ZX-gOB" id="tP4-rW-p4O"/>
+                        <outlet property="videoView" destination="TQg-Uh-eCU" id="OVB-Jr-KKU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oyH-0j-JmB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ebo-4k-giY" customClass="NavigationController" customModule="InterfaceOrientation_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bxX-c8-ovS" customClass="NavigationBar" customModule="InterfaceOrientation_Example" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="M8Q-oc-L6I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B7n-JY-Jba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
